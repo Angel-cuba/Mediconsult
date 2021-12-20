@@ -1,27 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import { Touch } from './Touch';
+import { Layout } from './components/layout/Layout';
+// import Login from './components/login/Login';
+import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
+import Profile from './UserProfile/ProfileContent';
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<Touch />
-				<p>Mediconsult place</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<Layout>
+			<AuthenticatedTemplate>
+				<Profile />
+			</AuthenticatedTemplate>
+			<UnauthenticatedTemplate>
+				<h1>Plzzz Sign In</h1>
+				{/* <Login /> */}
+			</UnauthenticatedTemplate>
+		</Layout>
 	);
 }
 

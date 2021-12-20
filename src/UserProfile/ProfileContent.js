@@ -1,7 +1,6 @@
 import { useMsal } from '@azure/msal-react';
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
-// import { loginRequest } from '../config/authConfig';
 import { loginRequest } from '../config/authConfig';
 import { callMsGraph } from '../config/graph';
 import { ProfileData } from './ProfileData';
@@ -30,13 +29,13 @@ const Profile = () => {
 		instance
 			.acquireTokenSilent(request)
 			.then((response) => {
-				// callMsGraph(response.accessToken).then((response) => setGraphData(response));
+				callMsGraph(response.accessToken).then((response) => setGraphData(response));
 				console.log(response);
 			})
 			.catch((e) => {
-				// instance.acquireTokenPopup(request).then((response) => {
-				// 	callMsGraph(response.accessToken).then((response) => setGraphData(response));
-				// });
+				instance.acquireTokenPopup(request).then((response) => {
+					callMsGraph(response.accessToken).then((response) => setGraphData(response));
+				});
 				console.log(e);
 			});
 	}

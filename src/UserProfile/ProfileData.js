@@ -3,20 +3,21 @@ import React from 'react';
 /**
  * Renders information about the user obtained from Microsoft Graph
  */
-export const ProfileData = (props) => {
+export const ProfileData = ({ graphData }) => {
+	const { givenName, surname, userPrincipalName, id } = graphData;
 	return (
 		<div id="profile-div">
 			<p>
-				<strong>First Name: </strong> {props.graphData.givenName}
+				<strong>First Name: </strong> {givenName}
 			</p>
 			<p>
-				<strong>Last Name: </strong> {props.graphData.surname}
+				<strong>Last Name: </strong> {surname}
 			</p>
 			<p>
-				<strong>Email: </strong> {props.graphData.userPrincipalName}
+				<strong>Email: </strong> {userPrincipalName}
 			</p>
 			<p>
-				<strong>Id: </strong> {props.graphData.id}
+				<strong>Id: </strong> {id}
 			</p>
 		</div>
 	);

@@ -6,11 +6,13 @@ import Profile from './UserProfile/ProfileContent';
 // import Header from "./ComponentsFrontEnd/header";
 // import Logo from "./ComponentsFrontEnd/logo";
 import Calendar from './components/calendar/calendar.js'
+import CalendarPage from './components/calendar/index'
 
-const style = {
-	position: "relative",
-	margin: "50px auto"
-}
+
+// const style = {
+// 	position: "relative",
+// 	margin: "50px auto"
+// }
 
 function App() {
 	return ( <>
@@ -23,9 +25,9 @@ function App() {
 				{/* <Login /> */}
 			</UnauthenticatedTemplate>
 			<div>
-				<Calendar style={style} width="302px" />
+				{/* <Calendar style={style} width="302px" /> */}
 					{/* onDayClick={(e, day)=> this.onDayClick(e, day)} */}
-				{/* <button href="./components/calendar/index.js">Check the Calendar</button> */}
+				<CalendarPage />
 			</div>
 		</Layout>
 

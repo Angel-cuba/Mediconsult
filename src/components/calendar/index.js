@@ -1,11 +1,13 @@
-import Calendar from './components/calendar/calendar.js'
+import React from 'react'
+// import Calendar from './components/calendar/calendar.js'
+import Calendar from './calendar'
 
 const style = {
 	position: "relative",
 	margin: "50px auto"
 }
 
-class CalendarPage extends Component {
+class CalendarPage extends React.Component {
     onDayClick = (e, day) => {
         alert(day);
     }

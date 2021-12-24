@@ -5,8 +5,8 @@ import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/
 import Profile from './UserProfile/ProfileContent';
 // import Header from "./ComponentsFrontEnd/header";
 // import Logo from "./ComponentsFrontEnd/logo";
-import Calendar from './components/calendar/calendar.js'
-import CalendarPage from './components/calendar/index'
+
+import CalendarPage from './components/calendar/calendarPage'
 
 
 // const style = {

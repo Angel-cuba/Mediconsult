@@ -3,18 +3,35 @@ import { Layout } from './components/layout/Layout';
 // import Login from './components/login/Login';
 import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
 import Profile from './UserProfile/ProfileContent';
+// import Header from "./ComponentsFrontEnd/header";
+// import Logo from "./ComponentsFrontEnd/logo";
+
+import CalendarPage from './components/calendar/calendarPage'
+
+
+// const style = {
+// 	position: "relative",
+// 	margin: "50px auto"
+// }
 
 function App() {
-	return (
+	return ( <>
 		<Layout>
 			<AuthenticatedTemplate>
 				<Profile />
 			</AuthenticatedTemplate>
 			<UnauthenticatedTemplate>
-				<h1>Plzzz Sign In</h1>
+				{/* <h1>Plzzz Sign In</h1> */}
 				{/* <Login /> */}
 			</UnauthenticatedTemplate>
+			<div>
+				{/* <Calendar style={style} width="302px" /> */}
+					{/* onDayClick={(e, day)=> this.onDayClick(e, day)} */}
+				<CalendarPage />
+			</div>
 		</Layout>
+
+		</>
 	);
 }
 
